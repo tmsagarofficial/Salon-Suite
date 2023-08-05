@@ -1,8 +1,11 @@
 from django.contrib import admin
-from .models import Category,Brand,PorS,Size,Product
+from .models import Category,Brand,Size,Product
 
 admin.site.register(Category)
 admin.site.register(Brand)
-admin.site.register(PorS)
+
 admin.site.register(Size)
-admin.site.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display=('id','title','brand','size','price','status',)
+    list_editable=('status',)
+admin.site.register(Product,ProductAdmin)
