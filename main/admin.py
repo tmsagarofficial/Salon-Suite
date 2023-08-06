@@ -13,6 +13,7 @@ admin.site.register(Banner,BannerAdmin)
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display=('title','image_tag')
+    
 admin.site.register(Category,CategoryAdmin)
 
 
